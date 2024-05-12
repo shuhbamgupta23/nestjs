@@ -15,8 +15,8 @@ export class ProductController {
     return this.ProductService.create(name, price, description, seller);
   }
 
-  @Get(':id')
-  get(@Param('id') id: string): Promise<Product> {
+  @Get()
+  get(@Param('id') id: string): Promise<Product[]> {
     return this.ProductService.findAll(id);
   }
 }

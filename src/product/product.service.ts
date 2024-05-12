@@ -25,7 +25,7 @@ export class ProductService {
     return newProduct;
   }
 
-  async findAll(id: string): Promise<ProductDocument> {
-    return this.productModel.findById(id);
+  async findAll(id: string): Promise<ProductDocument[]> {
+    return this.productModel.find().populate('seller');
   }
 }
